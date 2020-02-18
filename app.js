@@ -1,54 +1,62 @@
-const cardDeck = [
-    "Ace Spades",
-    "Two Spades",
-    "Three Spades",
-    "Four Spades",
-    "Five Spades",
-    "Six Spades",
-    "Seven Spades",
-    "Eight Spades",
-    "Nine Spades",
-    "Ten Spades",
-    "Jack Spades",
-    "Queen Spades",
-    "King Spades",
-    "Ace Club",
-    "Two Club",
-    "Three Club",
-    "Four Club",
-    "Five Club",
-    "Six Club",
-    "Seven Club",
-    "Eight Club",
-    "Nine Club",
-    "Ten Club",
-    "Jack Club",
-    "Queen Club",
-    "King Club",
-    "Ace Dimonds",
-    "Two Dimonds",
-    "Three Dimonds",
-    "Four Dimonds",
-    "Five Dimonds",
-    "Six Dimonds",
-    "Seven Dimonds",
-    "Eight Dimonds",
-    "Nine Dimonds",
-    "Ten Dimonds",
-    "Jack Dimonds",
-    "Queen Dimonds",
-    "King Dimonds",
-    "Ace Hearts",
-    "Two Hearts",
-    "Three Hearts",
-    "Four Hearts",
-    "Five Hearts",
-    "Six Hearts",
-    "Seven Hearts",
-    "Eight Hearts",
-    "Nine Hearts",
-    "Ten Hearts",
-    "Jack Hearts",
-    "Queen Hearts",
-    "King Hearts",
-];
+// Card deck
+class Deck {
+    constructor() {
+      this.deck = [];
+  
+      const suits = ['Hearts', 'Spades', 'Clubs', 'Diamonds'];
+      const values = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
+  
+      for (let suit in suits) {
+        for (let value in values) {
+          const card = {
+            value: values[value],
+            suit: suits[suit]
+          }
+          this.deck.push(card);
+        }
+      }
+    }
+  }
+  // Shuffle deck
+  const deck1 = new Deck();
+  // console.log(deck1.deck);
+  
+  function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+  }
+  
+  // Used like so
+  var arr = deck1.deck;
+  arr = shuffle(arr);
+  console.log(arr);
+
+  let shuffleArray = arr;
+  let playerDeck=[]; 
+  let computerDeck = [];
+  
+  for (i = 0; i <= arr.length; i = i + 2) {
+      if (arr[i] !== undefined) {
+          playerDeck.push(arr[i]);
+          computerDeck.push(arr[i + 1]);
+      }
+  }
+  console.log(playerDeck, computerDeck);
+  console.log('playerDeck', 'computerDeck' );
+
+  
+  
