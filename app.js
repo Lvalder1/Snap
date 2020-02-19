@@ -2,7 +2,7 @@ window.onload = () => {
   const playerHand = document.querySelector(".playerHand");
   const computerHand = document.querySelector(".computerHand");
   const playerPlay = document.getElementById("playerMove");
-
+  const startGame = document.getElementById("startGame");
 
   // Card deck
   class Deck {
@@ -64,15 +64,25 @@ window.onload = () => {
   }
   console.log(playerDeck, computerDeck);
 
-  let playerMove;
 
-  for (let i = 0; i < playerPlay.length; i++) {
-    playerPlay[i].addEventListener("click", () => {
-    playerMove = playerPlay[i].value
-    // const computerMove = myArray[computer];
+
+let playerHandNew = [];
+let computerHandNew = [];
+let currentDeck = [];
+  playerPlay.addEventListener("click", () => {
+    playerHand.innerHTML = playerDeck[0].value;
+    playerHand.innerHTML += playerDeck[0].suit;
+    computerHand.innerHTML = computerDeck[0].value;
+    computerHand.innerHTML += computerDeck[0].suit;
+    currentDeck.unshift(playerDeck[0].value)
+    currentDeck.unshift(playerDeck[0].suit);
+    currentDeck.unshift(computerDeck[0].value);
+    currentDeck.unshift(computerDeck[0].suit);
+    console.log(currentDeck);
+    playerDeck.shift();
+    computerDeck.shift();
+
     
-    console.log(playerMove);
+   })
     
-    })
-  }
 }
