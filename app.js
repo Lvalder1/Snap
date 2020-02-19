@@ -74,10 +74,7 @@ let currentDeck = [];
     playerHand.innerHTML += playerDeck[0].suit;
     computerHand.innerHTML = computerDeck[0].value;
     computerHand.innerHTML += computerDeck[0].suit;
-    currentDeck.unshift(playerDeck[0].value)
-    currentDeck.unshift(playerDeck[0].suit);
-    currentDeck.unshift(computerDeck[0].value);
-    currentDeck.unshift(computerDeck[0].suit);
+    currentDeck.push(playerDeck[0], computerDeck[0]);
     console.log(currentDeck);
     playerDeck.shift();
     computerDeck.shift();
