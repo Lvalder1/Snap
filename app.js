@@ -66,8 +66,6 @@ window.onload = () => {
 
 
 
-let playerHandNew = [];
-let computerHandNew = [];
 let currentDeck = [];
   playerPlay.addEventListener("click", () => {
     playerHand.innerHTML = playerDeck[0].value;
@@ -79,6 +77,7 @@ let currentDeck = [];
     playerDeck.shift();
     computerDeck.shift();
 
+if 
     
    })
     
