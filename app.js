@@ -1,8 +1,11 @@
 window.onload = () => {
-  const playerHand = document.querySelector(".playerHand");
-  const computerHand = document.querySelector(".computerHand");
+  const playerHandValue = document.querySelector(".playerHandValue");
+  const playerHandSuit = document.querySelector(".playerHandSuit");
+  const computerHandValue = document.querySelector(".computerHandValue");
+  const computerHandSuit = document.querySelector(".computerHandSuit");
   const playerPlay = document.getElementById("playerMove");
   const startGame = document.getElementById("startGame");
+  const snap = document.getElementById("snap");
 
   // Card deck
   class Deck {
@@ -68,17 +71,31 @@ window.onload = () => {
 
 let currentDeck = [];
   playerPlay.addEventListener("click", () => {
-    playerHand.innerHTML = playerDeck[0].value;
-    playerHand.innerHTML += playerDeck[0].suit;
-    computerHand.innerHTML = computerDeck[0].value;
-    computerHand.innerHTML += computerDeck[0].suit;
-    currentDeck.push(playerDeck[0], computerDeck[0]);
+    playerHandValue.innerHTML = playerDeck[0].value;
+    playerHandSuit.innerHTML = playerDeck[0].suit;
+    computerHandValue.innerHTML = computerDeck[0].value;
+    computerHandSuit.innerHTML = computerDeck[0].suit;
+    currentDeck.unshift(playerDeck[0], computerDeck[0]);
     console.log(currentDeck);
+    console.log(playerDeck[0].value);
     playerDeck.shift();
     computerDeck.shift();
-
-if 
+    console.log(playerDeck[0].value);
+  }) 
+    snap.addEventListener("click", () => {
+      if (currentDeck[0].value === currentDeck[1].value) {
+        alert("Player Wins!");
+      } else  { 
+        alert("No Snap!");
+      }
+      console.log(currentDeck[0].value);
+      console.log(currentDeck[1].value);
     
-   })
+  })
+
+
+
+    
+  
     
 }
