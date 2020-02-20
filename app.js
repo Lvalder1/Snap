@@ -76,26 +76,40 @@ let currentDeck = [];
     computerHandValue.innerHTML = computerDeck[0].value;
     computerHandSuit.innerHTML = computerDeck[0].suit;
     currentDeck.unshift(playerDeck[0], computerDeck[0]);
-    console.log(currentDeck);
-    console.log(playerDeck[0].value);
     playerDeck.shift();
     computerDeck.shift();
-    console.log(playerDeck[0].value);
+   
   }) 
+
+  let timer = () => {
+    let min = 5;
+    let max = 10;
+    let timeResult = Math.floor(Math.random() * (max - min + 1) + min) * 1000;
+    return timeResult;
+  }
+  console.log(timer());
+  
+
+  if (currentDeck[0].value === currentDeck[1].value) {
+    alert("Computer Wins!");
+  } else  { 
+    alert("No Snap!");
+  }
+
+  let computerWin = () => {
+
+
+  } 
+
+
+
     snap.addEventListener("click", () => {
       if (currentDeck[0].value === currentDeck[1].value) {
         alert("Player Wins!");
       } else  { 
         alert("No Snap!");
       }
-      console.log(currentDeck[0].value);
-      console.log(currentDeck[1].value);
+     
     
   })
-
-
-
-    
-  
-    
 }
