@@ -68,13 +68,17 @@ window.onload = () => {
   console.log(playerDeck, computerDeck);
 
   let timer = () => {
-    let min = 1;
+    let min = 1.5;
     let max = 3;
     let timeResult = Math.floor(Math.random() * (max - min + 1) + min) * 1000;
     return timeResult;
   }
 
-let currentDeck = [];
+
+  let currentDeck = [];
+  let playerWon = false;
+  let computerWon = false;
+
   playerPlay.addEventListener("click", () => {
     playerHandValue.innerHTML = playerDeck[0].value;
     playerHandSuit.innerHTML = playerDeck[0].suit;
@@ -83,33 +87,28 @@ let currentDeck = [];
     currentDeck.unshift(playerDeck[0], computerDeck[0]);
     playerDeck.shift();
     computerDeck.shift();
-    snap.addEventListener("click", () => {
-      if (currentDeck[0].value === currentDeck[1].value) {
-        alert("Player Wins!");
-      } else  { 
-        alert("No Snap!");
-      }  
-  })
 
     if (currentDeck[0].value === currentDeck[1].value) {
       const interval = timer();
       setTimeout(() => {
-        alert("Computer Wins!");
-      }, interval);  
+        if (playerWon === false) {
+          alert("Computer Snap!");
+          computerWon = true;
+        }
+      }, interval);
     }
-  })   
-console.log(timer());
+  });
 
-  
-  // playerPlay.addEventListener("click", () => {
-   
-  //      });
-  
-  
-  // setTimeout(playerPlay, timer);
-  
- 
+  snap.addEventListener("click", () => {
+    if (currentDeck[0].value === currentDeck[1].value) {
+      if (computerWon === false) {
+        alert("Player Snap!");
+        playerWon = true;
+      }
+    } else {
+      alert("No Snap!");
+    }
+  });
 
-
-    
+  console.log(timer());
 }
