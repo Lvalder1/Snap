@@ -26,7 +26,7 @@ window.onload = () => {
     }
   }
   const deck1 = new Deck();
-  
+
 
   function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -103,4 +103,5 @@ window.onload = () => {
     } else {
       alert("No Snap!");
     }
-  });}
+  });
+}
