@@ -108,7 +108,4 @@ window.onload = () => {
     } else {
       alert("No Snap!");
     }
-  });
-
-  console.log(timer());
-}
+  });}
