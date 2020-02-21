@@ -67,7 +67,12 @@ window.onload = () => {
   }
   console.log(playerDeck, computerDeck);
 
-
+  let timer = () => {
+    let min = 1;
+    let max = 3;
+    let timeResult = Math.floor(Math.random() * (max - min + 1) + min) * 1000;
+    return timeResult;
+  }
 
 let currentDeck = [];
   playerPlay.addEventListener("click", () => {
@@ -78,38 +83,33 @@ let currentDeck = [];
     currentDeck.unshift(playerDeck[0], computerDeck[0]);
     playerDeck.shift();
     computerDeck.shift();
-   
-  }) 
-
-  let timer = () => {
-    let min = 5;
-    let max = 10;
-    let timeResult = Math.floor(Math.random() * (max - min + 1) + min) * 1000;
-    return timeResult;
-  }
-  console.log(timer());
-  
-
-  if (currentDeck[0].value === currentDeck[1].value) {
-    alert("Computer Wins!");
-  } else  { 
-    alert("No Snap!");
-  }
-
-  let computerWin = () => {
-
-
-  } 
-
-
-
     snap.addEventListener("click", () => {
       if (currentDeck[0].value === currentDeck[1].value) {
         alert("Player Wins!");
       } else  { 
         alert("No Snap!");
-      }
-     
-    
+      }  
   })
+
+    if (currentDeck[0].value === currentDeck[1].value) {
+      const interval = timer();
+      setTimeout(() => {
+        alert("Computer Wins!");
+      }, interval);  
+    }
+  })   
+console.log(timer());
+
+  
+  // playerPlay.addEventListener("click", () => {
+   
+  //      });
+  
+  
+  // setTimeout(playerPlay, timer);
+  
+ 
+
+
+    
 }
