@@ -4,7 +4,6 @@ window.onload = () => {
   const computerHandValue = document.querySelector(".computerHandValue");
   const computerHandSuit = document.querySelector(".computerHandSuit");
   const playerPlay = document.getElementById("playerMove");
-  const startGame = document.getElementById("startGame");
   const snap = document.getElementById("snap");
 
   // Card deck
