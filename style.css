@@ -35,9 +35,10 @@ h1 {
 .cardDecks .playerHand div, .cardDecks .computerHand div {
   height: 48px;
   width: 98px;
+  text-align: center;
 }
 
-.cardDecks .cardDeck {
+.cardDecks .result {
   height: 100px;
   width: 100px;
   border: 2px solid black;

@@ -5,6 +5,7 @@ window.onload = () => {
   const computerHandSuit = document.querySelector(".computerHandSuit");
   const playerPlay = document.getElementById("playerMove");
   const snap = document.getElementById("snap");
+  const result = document.getElementsByClassName(".result");
 
   // Card deck
   class Deck {
