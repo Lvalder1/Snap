@@ -8,20 +8,23 @@ h1 {
     text-align: center;
 }
 
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 .mainContainer {
     display: flex;
-    flex-direction: column;
+    // align-items: center;
+    justify-content: center;
 }
 .handTitle {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
+    align-items: center;
 
-.cardDecks {
-    display: flex;
-    justify-content: center;
-   
+
     .playerHand, .computerHand {
         display: flex;
         flex-direction: column;
@@ -29,26 +32,23 @@ h1 {
         width: 100px; 
         border: 2px solid black;
         margin: 10px;
-        div {
-            height: 48px;
-            width: 98px; 
-            text-align: center;  
-        }
     }
     .result {
         height: 100px;
         width: 200px; 
         border: 2px solid black;
         margin: 10px;
-        margin-top: 38px;
+        // margin-top: 38px;
         text-align: center;
     }
-    
 }
+
+
 
 .moves {
     display: flex;
     justify-content: center;
+    text-align: center;
     button {
         // height: 100px;
         // width: 100px; 
