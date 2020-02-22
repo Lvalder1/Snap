@@ -5,8 +5,8 @@ window.onload = () => {
   const computerHandSuit = document.querySelector(".computerHandSuit");
   const playerPlay = document.getElementById("playerMove");
   const snap = document.getElementById("snap");
-  const result = document.getElementsByClassName(".result");
-
+  const result = document.querySelector(".resultBox");
+console.log(result);
   // Card deck
   class Deck {
     constructor() {
@@ -88,7 +88,7 @@ window.onload = () => {
       const interval = timer();
       setTimeout(() => {
         if (playerWon === false) {
-          alert("Computer Snap!");
+          result.innerHTML = "Computer Snap!";
           computerWon = true;
         }
       }, interval);
@@ -98,11 +98,11 @@ window.onload = () => {
   snap.addEventListener("click", () => {
     if (currentDeck[0].value === currentDeck[1].value) {
       if (computerWon === false) {
-        alert("Player Snap!");
+        result.innerHTML = "Player Snap!";
         playerWon = true;
       }
     } else {
-      alert("No Snap!");
+      result.innerHTML = "No Snap!";
     }
   });
 }
