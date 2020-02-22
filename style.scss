@@ -8,6 +8,16 @@ h1 {
     text-align: center;
 }
 
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+}
+.handTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .cardDecks {
     display: flex;
     justify-content: center;
@@ -25,14 +35,13 @@ h1 {
             text-align: center;  
         }
     }
-    .resultBox {
+    .result {
         height: 100px;
-        width: 100px; 
+        width: 200px; 
         border: 2px solid black;
         margin: 10px;
-        .result {
-            text-align: center;
-        }
+        margin-top: 38px;
+        text-align: center;
     }
     
 }

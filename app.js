@@ -5,7 +5,7 @@ window.onload = () => {
   const computerHandSuit = document.querySelector(".computerHandSuit");
   const playerPlay = document.getElementById("playerMove");
   const snap = document.getElementById("snap");
-  const result = document.querySelector(".resultBox");
+  const result = document.querySelector(".result");
 console.log(result);
   // Card deck
   class Deck {
@@ -83,7 +83,7 @@ console.log(result);
     currentDeck.unshift(playerDeck[0], computerDeck[0]);
     playerDeck.shift();
     computerDeck.shift();
-
+    console.log(currentDeck);
     if (currentDeck[0].value === currentDeck[1].value) {
       const interval = timer();
       setTimeout(() => {
