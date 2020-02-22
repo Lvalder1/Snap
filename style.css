@@ -9,14 +9,29 @@ h1 {
   text-align: center;
 }
 
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .mainContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .handTitle {
@@ -35,16 +50,7 @@ h1 {
           align-items: center;
 }
 
-.cardDecks {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.cardDecks .playerHand, .cardDecks .computerHand {
+.handTitle .playerHand, .handTitle .computerHand {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -58,18 +64,11 @@ h1 {
   margin: 10px;
 }
 
-.cardDecks .playerHand div, .cardDecks .computerHand div {
-  height: 48px;
-  width: 98px;
-  text-align: center;
-}
-
-.cardDecks .result {
+.handTitle .result {
   height: 100px;
   width: 200px;
   border: 2px solid black;
   margin: 10px;
-  margin-top: 38px;
   text-align: center;
 }
 
@@ -80,6 +79,7 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-align: center;
 }
 
 .moves button {
