@@ -29,9 +29,6 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .handTitle {
@@ -50,7 +47,7 @@ h1 {
           align-items: center;
 }
 
-.handTitle .playerHand, .handTitle .computerHand {
+.playerHand, .computerHand {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,7 +61,7 @@ h1 {
   margin: 10px;
 }
 
-.handTitle .result {
+.result {
   height: 100px;
   width: 200px;
   border: 2px solid black;
