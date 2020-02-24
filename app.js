@@ -98,6 +98,7 @@ console.log(result);
           computerScore.innerHTML = computerScoreResult;
           computerDeck.push(...currentDeck);
           console.log(computerDeck);
+          // computerWon = false;
         }
       }, interval);
     } else {
@@ -119,6 +120,7 @@ console.log(result);
         playerScoreResult++;
         playerScore.innerHTML = playerScoreResult;
         playerDeck.push(...currentDeck);
+        // playerWon = false;
       }
     } else {
       result.innerHTML = "No Snap!";
