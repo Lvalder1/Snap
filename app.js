@@ -110,9 +110,12 @@ console.log(result);
       result.innerHTML = "Draw!";
     } 
   }
+  if (computerWon === true) {
+    playerPlay.removeEventListener ("click",)
+  }
   });
 
-  snap.addEventListener("click", () => {
+  snap.addEventListener("click",  () => {
     if (currentDeck[0].value === currentDeck[1].value) {
       if (computerWon === false) {
         result.innerHTML = "Player Snap!";
@@ -124,6 +127,9 @@ console.log(result);
       }
     } else {
       result.innerHTML = "No Snap!";
+    }
+    if (playerWon === true) {
+    snap.removeEventListener ("click",)
     }
   });
 }
