@@ -14,8 +14,26 @@ console.log(result);
     constructor() {
       this.deck = [];
 
-      const suits = ['Hearts', 'Spades', 'Clubs', 'Diamonds'];
+      const suits = ['♠︎', '♥︎', '♣︎', '♦︎'];
       const values = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
+
+      if (playerHandSuit === '♥︎' || '♦︎' ) {
+        playerHandSuit.style.color = "red";
+        playerHandValue.style.color = "red";
+
+      } else if (playerHandSuit === '♣︎' || '♠︎' ) {
+        playerHandSuit.style.color = "black";
+        playerHandValue.style.color = "black";
+      }
+
+      if (computerHandSuit === '♥︎' || '♦︎'  ) {
+        computerHandSuit.style.color = "red";
+        computerHandValue.style.color = "red";
+
+      } else if (computerHandSuit === '♣︎' || '♠︎' ) {
+        computerHandValue.style.color = "black";
+        computerHandSuit.style.color = "black";
+      }
 
       for (let suit in suits) {
         for (let value in values) {
@@ -79,7 +97,7 @@ console.log(result);
   let computerScoreResult = 0;
   let playerScoreResult = 0;
 
-  playerPlay.addEventListener("click", () => {
+  const handlePlayerClick = () => {
     playerHandValue.innerHTML = playerDeck[0].value;
     playerHandSuit.innerHTML = playerDeck[0].suit;
     computerHandValue.innerHTML = computerDeck[0].value;
@@ -93,7 +111,7 @@ console.log(result);
       setTimeout(() => {
         if (playerWon === false) {
           result.innerHTML = "Computer Snap!";
-          computerWon = true;
+          // playerPlay.removeEventListener("click", handlePlayerClick);
           computerScoreResult++;
           computerScore.innerHTML = computerScoreResult;
           computerDeck.push(...currentDeck);
@@ -102,24 +120,21 @@ console.log(result);
         }
       }, interval);
     } else {
-    if (currentDeck.length === 52 & computerScoreResult > playerScoreResult || playerDeck.length === 0 & playerDeck.length < computerDeck.length) {
-      result.innerHTML = "Computer Wins!";
-    } else if (currentDeck.length === 52 & playerScoreResult > computerScoreResult || computerDeck.length === 0 & computerDeck.length < playerDeck.length) {
-      result.innerHTML = "Player Wins!"
-    } else if (currentDeck.length === 52 & playerScoreResult === computerScoreResult) {
-      result.innerHTML = "Draw!";
-    } 
+      if (currentDeck.length === 52 & computerScoreResult > playerScoreResult || playerDeck.length === 0 & playerDeck.length < computerDeck.length) {
+        result.innerHTML = "Computer Wins!";
+      } else if (currentDeck.length === 52 & playerScoreResult > computerScoreResult || computerDeck.length === 0 & computerDeck.length < playerDeck.length) {
+        result.innerHTML = "Player Wins!"
+      } else if (currentDeck.length === 52 & playerScoreResult === computerScoreResult) {
+        result.innerHTML = "Draw!";
+      } 
+    }
   }
-  if (computerWon === true) {
-    playerPlay.removeEventListener ("click",)
-  }
-  });
 
-  snap.addEventListener("click",  () => {
+  const handleSnap = () => {
     if (currentDeck[0].value === currentDeck[1].value) {
       if (computerWon === false) {
         result.innerHTML = "Player Snap!";
-        playerWon = true;
+        // snap.removeEventListener("click", handleSnap);
         playerScoreResult++;
         playerScore.innerHTML = playerScoreResult;
         playerDeck.push(...currentDeck);
@@ -128,8 +143,8 @@ console.log(result);
     } else {
       result.innerHTML = "No Snap!";
     }
-    if (playerWon === true) {
-    snap.removeEventListener ("click",)
-    }
-  });
+  }
+
+  playerPlay.addEventListener("click", handlePlayerClick);
+  snap.addEventListener("click", handleSnap);
 }
