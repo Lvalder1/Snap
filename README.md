@@ -1,6 +1,10 @@
 # Snap!
 
-This project is your classic game of Snap that has been created so that I could pratice my skills using Javascript. The project was created using HTML, SCSS and Javascript. 
+This project is your classic game of Snap that has been created so that I could pratice my skills using Javascript. The project was created using HTML, SCSS and Javascript.
+
+## Runing the Project
+
+The project is hosted at: https://lvalder1.github.io/Snap/
 
 ## Installing
 
